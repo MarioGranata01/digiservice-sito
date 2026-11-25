@@ -1,0 +1,40 @@
+/* Contenitori, sezioni e griglie. */
+.in { max-width: 1600px; margin: 0 auto; padding-left: max(clamp(20px, 4cqi, 56px), env(safe-area-inset-left, 0px)); padding-right: max(clamp(20px, 4cqi, 56px), env(safe-area-inset-right, 0px)); }
+
+.sec { padding: clamp(56px, 8cqi, 120px) 0; }
+.sec.alt { background: var(--nebbia); }
+.sec.tight { padding-top: 0; }
+.sec--related { padding-top: clamp(24px, 3cqi, 40px); }
+
+.sec-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: clamp(24px, 3.4cqi, 46px); max-width: 46em; }
+.sec-head .lead { max-width: 40em; }
+
+/* Due colonne: testo + visual */
+.split { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(24px, 5cqi, 80px); align-items: center; }
+.split .tx { display: flex; flex-direction: column; gap: 18px; }
+.split > .tl, .split > .box { align-self: center; }
+
+/* Due colonne con form/contatti */
+.ct { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(24px, 5cqi, 70px); align-items: center; }
+.ct .tx { display: flex; flex-direction: column; gap: 22px; }
+
+/* Griglia di card/box */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.cards.c2 { grid-template-columns: repeat(2, 1fr); }
+.cards.c4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Pila verticale di elementi */
+.stack { display: grid; gap: 16px; }
+
+/* Pulsanti / link affiancati */
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.link-row { display: flex; gap: 22px 26px; flex-wrap: wrap; }
+.sec .cards + .link-row { margin-top: 22px; }
+
+@container st (max-width: 980px) {
+  .split, .ct { grid-template-columns: 1fr; }
+  .cards, .cards.c4 { grid-template-columns: repeat(2, 1fr); }
+}
+@container st (max-width: 640px) {
+  .cards, .cards.c2, .cards.c4 { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,45 @@
+/* Footer (shell/footer.js): fascia d'invito rossa, colonne, riga legale. */
+.ft { background: var(--crema); padding: 0 0 28px; border-top: 3px solid var(--rosso); margin-top: clamp(40px, 5cqi, 72px); }
+
+/* Fascia d'invito: «sale» sopra il bordo del footer */
+.ft-cta { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 20px 40px; flex-wrap: wrap; margin-top: calc(-1 * clamp(40px, 5cqi, 64px)); padding: clamp(24px, 3cqi, 40px) clamp(22px, 3.6cqi, 48px); border-radius: 20px; color: #fff; background: var(--grad-rosso); box-shadow: 0 30px 60px -30px rgba(var(--rosso-rgb), .7); }
+.ft-cta::before { content: ""; position: absolute; width: 50%; aspect-ratio: 1; right: -12%; top: -80%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 110, 96, .4), transparent); pointer-events: none; }
+.ft-cta > * { position: relative; }
+.ft-cta-lab { font: 600 11px var(--fm); letter-spacing: .12em; text-transform: uppercase; color: var(--corallo); margin-bottom: 8px; }
+.ft-cta h3 { font: 800 clamp(20px, 2.2cqi, 28px)/1.2 var(--fd); letter-spacing: -.02em; max-width: 26em; }
+.ft-cta .btn { background: #fff; color: var(--rosso); }
+.ft-cta .btn:hover { background: var(--vino); color: #fff; }
+
+.ft .g { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; padding: clamp(40px, 4.4cqi, 60px) 0 32px; }
+.ft h4 { font: 600 11px var(--fm); letter-spacing: .12em; text-transform: uppercase; color: var(--rosso); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.ft h4::before { content: ""; width: 16px; height: 2px; background: var(--rosso); }
+.ft li { padding: 5px 0; font-size: 15px; color: var(--ant); }
+.ft .g a { transition: color .2s; }
+.ft .g ul a:hover { color: var(--rosso); }
+.ft .logo img { mix-blend-mode: multiply; height: 52px; }
+.ft-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.ft .tagline { color: var(--grigio); font-size: 15px; max-width: 22em; }
+.ft-sede { display: grid; gap: 4px; }
+.ft-city { display: flex; align-items: center; gap: 6px; }
+.ft-city svg { width: 16px; height: 16px; fill: none; stroke: var(--rosso); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.ft-city span { font: 700 15px var(--fd); color: var(--ink); }
+.ft address { font-style: normal; font-size: 14.5px; color: var(--grigio); line-height: 1.55; padding-left: 22px; }
+.ft-mail { font: 700 15px var(--fd); color: var(--rosso); }
+.ft-mail:hover { color: var(--vino); }
+.ft-social { display: flex; gap: 8px; flex-wrap: wrap; }
+.ft-social li { padding: 0; }
+.ft-social a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(var(--rosso-rgb), .25); color: var(--rosso); background: #fff; transition: background .2s, color .2s, transform .2s; }
+.ft-social a:hover { background: var(--rosso); color: #fff; transform: translateY(-2px); }
+.ft-social svg { width: 18px; height: 18px; }
+
+.ft-legal { display: flex; justify-content: space-between; gap: 10px 24px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid rgba(var(--rosso-rgb), .14); }
+.ft-legal small { color: var(--grigio); font-size: 13px; }
+.ft-legal a:hover { color: var(--rosso); }
+
+@container st (max-width: 980px) {
+  .ft .g { grid-template-columns: 1fr 1fr; }
+  .ft-brand { grid-column: 1 / -1; }
+}
+@container st (max-width: 640px) {
+  .ft .g { grid-template-columns: 1fr; }
+}

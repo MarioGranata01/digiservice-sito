@@ -1,0 +1,30 @@
+/* Titoli e testi. Le dimensioni usano cqi (larghezza del contenitore .stage). */
+.h1 { font: 800 clamp(40px, 7.4cqi, 100px)/1.02 var(--fd); letter-spacing: -.035em; text-wrap: balance; }
+.h1.sm { font-size: clamp(32px, 4.6cqi, 64px); line-height: 1.05; }
+.h2 { font: 800 clamp(30px, 4.4cqi, 58px)/1.06 var(--fd); letter-spacing: -.03em; text-wrap: balance; }
+.h3 { font: 800 clamp(22px, 2.4cqi, 30px)/1.15 var(--fd); letter-spacing: -.02em; }
+.lead { font-size: clamp(17px, 1.7cqi, 21px); color: var(--grigio); max-width: 34em; }
+
+/* Etichetta maiuscoletto con trattino rosso */
+.lab { font: 600 12px var(--fm); letter-spacing: .14em; text-transform: uppercase; color: var(--grigio); display: flex; align-items: center; gap: 10px; }
+.lab::before { content: ""; width: 22px; height: 2px; background: var(--rosso); }
+
+/* Meta-informazioni (date, categorie, etichette di gruppo) */
+.meta { font: 600 11px var(--fm); letter-spacing: .1em; text-transform: uppercase; color: var(--grigio); }
+.group-label { margin-bottom: 12px; }
+* + .group-label { margin-top: 18px; }
+
+.dash { display: block; width: 72px; height: 4px; background: var(--rosso); margin: 26px 0; border-radius: 2px; }
+.note { margin-top: 18px; color: var(--grigio); }
+.note--center { text-align: center; }
+.prose p { color: var(--ant); margin-bottom: 1.1em; max-width: 38em; }
+
+/* "Tecnologia. Strategia. Risultati." */
+.tri { font: 800 clamp(34px, 5.4cqi, 70px)/1.02 var(--fd); letter-spacing: -.035em; }
+.tri span { display: block; }
+.tri span:nth-child(2) { color: #4A4F57; }
+.tri span:nth-child(3), .tri i { color: var(--rosso); }
+.tri i { font-style: normal; }
+
+/* Titolo di sezione medio (home): più piccolo dell'apertura, per una gerarchia equilibrata */
+.h2m { font: 800 clamp(26px, 2.8cqi, 38px)/1.12 var(--fd); letter-spacing: -.025em; text-wrap: balance; margin-top: 12px; }

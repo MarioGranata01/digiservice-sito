@@ -1,0 +1,86 @@
+/* Header del sito e menu (shell/header.js). */
+.site-header { position: sticky; top: 0; z-index: 40; background: rgba(255, 255, 255, .92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid transparent; transition: box-shadow .3s, border-color .3s; }
+/* Sottile filo rosso in alto: richiama il colore del marchio */
+.site-header::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, var(--vino), var(--rosso) 50%, var(--rosso-l)); }
+.site-header .in { display: flex; align-items: center; height: 84px; transition: height .3s; }
+.site-header.is-scrolled { border-color: var(--linea); box-shadow: 0 10px 30px -22px rgba(11, 18, 32, .45); }
+.site-header.is-scrolled .in { height: 68px; }
+.hdr { position: relative; display: flex; align-items: center; width: 100%; gap: 24px; }
+
+.logo { display: flex; align-items: center; gap: 10px; font: 800 20px var(--fd); letter-spacing: -.03em; flex-shrink: 0; }
+.logo img { height: 54px; width: auto; display: block; transition: height .3s; }
+.site-header.is-scrolled .logo img { height: 44px; }
+
+/* Voci principali, al centro */
+.nv { flex: 1; display: flex; justify-content: center; gap: clamp(14px, 2cqi, 30px); font: 600 14.5px var(--fd); align-items: center; }
+.nv-top { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; padding: 12px 0; position: relative; color: var(--ink); transition: color .2s; }
+.nv-top::after { content: ""; position: absolute; left: 50%; right: 50%; bottom: 5px; height: 2px; border-radius: 2px; background: var(--rosso); transition: left .25s, right .25s; }
+.nv-top:hover, .has:hover > .nv-top { color: var(--rosso); }
+.nv-top:hover::after, .has:hover > .nv-top::after, .nv-top[aria-current=page]::after { left: 0; right: 0; }
+.nv-top[aria-current=page] { color: var(--rosso); }
+.chev { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s; }
+.has:hover .chev, .has:focus-within .chev { transform: rotate(180deg); }
+
+/* Sottomenu: compare con una dissolvenza */
+.has { position: relative; }
+.sub { position: absolute; top: calc(100% + 6px); left: 50%; min-width: 260px; background: #fff; border: 1px solid var(--linea); border-top: 3px solid var(--rosso); border-radius: 14px; box-shadow: 0 24px 50px -24px rgba(11, 18, 32, .35); padding: 8px; z-index: 50;
+  opacity: 0; visibility: hidden; transform: translate(-50%, 8px); transition: opacity .2s, transform .2s, visibility 0s .2s; }
+.sub::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; } /* ponte: il menu non si chiude passando col mouse */
+.has:hover .sub, .has:focus-within .sub { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition: opacity .2s, transform .2s; }
+.sub--wide { display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); min-width: 500px; }
+.sub a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px; border-radius: 9px; font: 600 14px var(--fd); color: var(--ant); }
+.sub a::after { content: "→"; color: var(--rosso); opacity: 0; transform: translateX(-4px); transition: opacity .2s, transform .2s; }
+.sub a:hover { background: var(--rosso-t); color: var(--rosso-h); }
+.sub a:hover::after { opacity: 1; transform: none; }
+
+/* Pulsante di contatto, separato a destra */
+.hdr-cta { flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px 11px 20px; border-radius: 999px; background: var(--rosso); color: #fff; font: 700 14px var(--fd); box-shadow: 0 12px 26px -14px rgba(var(--rosso-rgb), .8); transition: background .2s, transform .2s; }
+.hdr-cta svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.hdr-cta:hover { background: var(--vino); transform: translateY(-1px); }
+.hdr-cta:hover svg { transform: translateX(3px); }
+.hdr-cta[aria-current=page] { background: var(--vino); }
+
+/* Voce «Contattaci» dentro il menu: solo sugli schermi più stretti (lì il pulsante sparisce) */
+.nv-contact { display: none; }
+
+/* Selettore di lingua IT / EN */
+.lang { flex-shrink: 0; display: flex; padding: 3px; border-radius: 999px; border: 1px solid var(--linea); background: #fff; font: 700 12px var(--fm); letter-spacing: .06em; }
+.lang a { padding: 6px 9px; border-radius: 999px; color: var(--grigio); transition: background .2s, color .2s; }
+.lang a:hover { color: var(--rosso); }
+.lang a[aria-current] { background: var(--rosso-t); color: var(--rosso); }
+
+/* Pulsante menu (mobile): tre linee che diventano una X */
+.burger { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--linea); background: #fff; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.burger span { width: 18px; height: 2px; border-radius: 2px; background: var(--ink); transition: transform .25s, opacity .25s; }
+.hdr.open .burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hdr.open .burger span:nth-child(2) { opacity: 0; }
+.hdr.open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+@container st (max-width: 1320px) {
+  .nv { gap: 16px; font-size: 14px; }
+}
+/* Sotto i 1200 px le voci non ci stanno più in una riga: si passa al menu a tendina */
+@container st (max-width: 1200px) {
+  .hdr { justify-content: space-between; }
+  .nv { display: none; }
+  .lang { margin-left: auto; }
+  .burger { display: inline-flex; }
+  .hdr.open .nv { display: flex; flex-direction: column; align-items: stretch; gap: 2px; position: absolute; top: calc(100% + 1px); left: -20px; right: -20px; background: #fff; border-top: 1px solid var(--linea); padding: 12px 22px 18px; box-shadow: var(--sh); max-height: 75vh; overflow: auto; }
+  .nv-top { width: 100%; justify-content: space-between; padding: 12px 0; font-size: 16px; }
+  .nv-top::after { display: none; }
+  .nv > .has + .has, .nv > .has + a, .nv > a + .has { border-top: 1px solid var(--linea); }
+  .sub, .sub--wide { position: static; display: block; opacity: 1; visibility: visible; transform: none; border: 0; box-shadow: none; padding: 0 0 8px 10px; min-width: 0; background: transparent; }
+  .sub::before { display: none; }
+  .sub a { padding: 8px 10px; font-weight: 500; }
+}
+@container st (max-width: 640px) {
+  .logo img, .site-header.is-scrolled .logo img { height: 38px; }
+  .site-header .in { height: 68px; }
+  .hdr-cta { padding: 10px 14px; font-size: 13px; }
+  .hdr-cta svg { display: none; }
+}
+@container st (max-width: 460px) {
+  .hdr { gap: 10px; }
+  .hdr-cta { display: none; }
+  .hdr.open .nv-contact { display: flex; color: var(--rosso); border-top: 1px solid var(--linea); }
+}

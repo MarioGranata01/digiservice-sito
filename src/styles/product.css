@@ -1,0 +1,21 @@
+/* Elementi specifici delle pagine prodotto e progetto. */
+
+/* Mockup smartphone (TimeSheet) */
+.phone { position: relative; align-self: center; width: min(240px, 52%); aspect-ratio: 9/18; border-radius: 34px; border: 7px solid var(--ink); background: #fff; box-shadow: var(--sh); padding: 16px 12px; display: flex; flex-direction: column; gap: 10px; margin: auto; }
+.phone b { font: 800 13px var(--fd); }
+.phone .ck { border-radius: 14px; background: var(--rosso); color: #fff; text-align: center; padding: 14px 6px; font: 700 13px var(--fd); }
+.phone .ln { height: 34px; border-radius: 10px; background: var(--nebbia); display: flex; align-items: center; padding: 0 10px; font: 600 10px var(--fm); color: var(--grigio); letter-spacing: .06em; text-transform: uppercase; justify-content: space-between; }
+.phone .ln i { font-style: normal; color: var(--rosso-h); }
+.phone small { text-align: center; margin-top: auto; }
+
+/* Badge degli store */
+.stores { display: flex; gap: 10px; flex-wrap: wrap; }
+.stores span { font: 600 12px var(--fm); border: 1.5px solid var(--linea); border-radius: 12px; padding: 9px 14px; background: #fff; color: var(--ant); }
+
+/* Scala di maturità tecnologica (SIGENERA) */
+.trl { display: flex; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.trl + .cards { margin-top: 26px; }
+.trl span { font: 700 14px var(--fm); padding: 10px 16px; border: 1.5px solid var(--linea); background: #fff; }
+.trl span:first-child { border-radius: 999px 0 0 999px; }
+.trl span:last-child { border-radius: 0 999px 999px 0; background: var(--rosso); color: #fff; border-color: var(--rosso); }
+.trl i { flex: 1; min-width: 30px; height: 2px; background: var(--rosso); }

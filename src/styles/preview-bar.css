@@ -1,0 +1,22 @@
+/* Barra di anteprima e "palco" che simula Desktop / Tablet / Mobile (solo bozza). */
+/* Fissata in basso, così la pagina si vede come sarà davvero */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 100; background: rgba(255, 255, 255, .94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--linea); box-shadow: 0 -10px 30px -20px rgba(11, 18, 32, .3); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { padding-bottom: var(--barh); }
+.bar .in { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+.bar b { font: 600 11px var(--fm); letter-spacing: .12em; text-transform: uppercase; color: var(--grigio); }
+.bar .rt { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.bar .urlp { font: 500 11px var(--fm); color: var(--rosso-h); background: var(--rosso-t); padding: 5px 10px; border-radius: 999px; }
+.bar .lk { font: 700 13px var(--fd); color: var(--ink); padding: 8px 14px; border: 1.5px solid var(--linea); border-radius: 999px; }
+.bar .lk:hover { border-color: var(--rosso); color: var(--rosso-h); }
+
+.seg { display: flex; gap: 4px; background: var(--nebbia); padding: 4px; border-radius: 999px; }
+.seg button { font: 600 12px var(--fm); padding: 8px 12px; border-radius: 999px; border: 0; background: transparent; color: var(--ant); cursor: pointer; min-height: 36px; }
+.seg button[aria-pressed=true] { background: var(--ink); color: #fff; }
+
+/* Il palco è il contenitore delle container query (st) */
+.stage { container: st / inline-size; margin: 0 auto; transition: max-width .3s; background: #fff; }
+.stage[data-v=t] { max-width: 820px; box-shadow: 0 0 0 1px var(--linea), var(--sh); }
+.stage[data-v=m] { max-width: 390px; box-shadow: 0 0 0 1px var(--linea), var(--sh); }
+.view { overflow-x: clip; position: relative; }
+
+@media (max-width: 700px) { .bar b { display: none; } }

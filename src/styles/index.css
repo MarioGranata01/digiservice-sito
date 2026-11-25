@@ -1,0 +1,20 @@
+/*
+ * Punto di ingresso degli stili. Ordine: fondamenta → layout → componenti → shell.
+ * I breakpoint sono "container query" sul contenitore .stage (vedi preview-bar.css),
+ * così il selettore Desktop/Tablet/Mobile della bozza funziona davvero.
+ *   ≤ 980px: tablet   ≤ 640px: mobile
+ */
+@import './tokens.css';
+@import './base.css';
+@import './typography.css';
+@import './layout.css';
+@import './buttons.css';
+@import './hero.css';
+@import './cards.css';
+@import './blocks.css';
+@import './lists.css';
+@import './forms.css';
+@import './product.css';
+@import './header.css';
+@import './footer.css';
+@import './preview-bar.css';

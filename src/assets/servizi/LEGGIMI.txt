@@ -1,0 +1,16 @@
+Foto delle card servizi (home e pagina Servizi).
+
+Copiare qui una foto per servizio, con il nome dell'id del servizio:
+  consulenza-ict.jpg
+  cloud-solutions.jpg
+  data-analytics.jpg
+  cyber-security.jpg
+  sviluppo-software.jpg
+  devops.jpg
+  intelligenza-artificiale.jpg
+
+Formati accettati: .jpg .jpeg .png .webp
+Consigliate: orizzontali, almeno 1200x900 px, compresse (circa 150-250 KB l'una),
+perche' la build le include nel file unico dist/index.html.
+Il soggetto suggerito per ogni foto e' in src/data/service-photos.js.
+Finche' una foto manca, la card mostra un riquadro segnaposto.

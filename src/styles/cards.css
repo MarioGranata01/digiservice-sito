@@ -1,0 +1,71 @@
+/* Card, box, valori, piani (components/cards.js). */
+
+/* Riquadro con scena 3D */
+.vis { position: relative; border-radius: 28px; background: var(--scene-bg); border: 1px solid var(--linea); overflow: hidden; aspect-ratio: 5/4; }
+.vis canvas { position: absolute; inset: 0; }
+.split.rev > .vis { order: -1; }
+
+/* Card */
+.card { border: 1px solid var(--linea); border-radius: 26px; background: #fff; overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; display: flex; flex-direction: column; }
+.card:hover { transform: translateY(-6px); box-shadow: var(--sh-red); border-color: var(--border-red); }
+.card .cv { aspect-ratio: 16/10; position: relative; background: radial-gradient(100% 90% at 70% 30%, #fff, #FCF0F1 60%, #F4F5F7); }
+.card .cv canvas { position: absolute; inset: 0; }
+.card .tx { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card h3 { font: 800 20px/1.2 var(--fd); letter-spacing: -.02em; }
+.card p { color: var(--grigio); font-size: 15px; }
+.card .arr { margin-top: auto; padding-top: 6px; }
+.card .btn { align-self: flex-start; }
+
+/* Card rossa di invito all'azione */
+.card--accent { background: var(--rosso); border: 0; color: #fff; }
+.card--accent .tx { justify-content: center; min-height: 260px; gap: 16px; }
+.card--accent h3 { font-size: 26px; }
+.card--accent p { color: #fff; }
+
+/* Card tratteggiata "Prossimamente" */
+.card--placeholder { border-style: dashed; background: var(--nebbia); }
+.card--placeholder .tx { justify-content: center; min-height: 300px; }
+
+/* Card orizzontale (articolo in evidenza) */
+.card--wide { flex-direction: row; margin-bottom: 22px; }
+.card--wide .cv { flex: 1; aspect-ratio: auto; min-height: 260px; }
+.card--wide .tx { flex: 1; justify-content: center; }
+.card--wide h3 { font-size: 28px; }
+
+/* Box */
+.box { border: 1px solid var(--linea); border-radius: 24px; padding: 26px 28px; background: #fff; display: flex; flex-direction: column; gap: 10px; }
+.box h3 { font: 800 19px/1.2 var(--fd); letter-spacing: -.02em; }
+.box p { color: var(--grigio); font-size: 15.5px; }
+.box.red { background: var(--rosso-t); border-color: rgba(var(--rosso-rgb), .25); }
+.box--strong p { color: var(--ink); font-weight: 500; }
+.box--strong.red p { font-weight: 600; }
+.box .ico { width: 34px; height: 34px; border-radius: 10px; background: var(--rosso-t); display: grid; place-items: center; color: var(--rosso-h); font: 700 14px var(--fm); }
+
+/* Valori aziendali */
+.vals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.val { background: #fff; border: 1px solid var(--linea); border-radius: 26px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: .25s; position: relative; overflow: hidden; }
+.val::before { content: ""; position: absolute; left: 0; top: 0; height: 4px; width: 44px; background: var(--rosso); transition: width .35s; }
+.val:hover { transform: translateY(-5px); box-shadow: var(--sh-red); border-color: var(--border-red); }
+.val:hover::before { width: 100%; }
+.val p { color: var(--grigio); font-size: 15.5px; }
+.num { font: 800 48px/1 var(--fd); color: transparent; -webkit-text-stroke: 1.5px var(--rosso); letter-spacing: -.04em; }
+
+/* Piani tariffari */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.plan { border: 1px solid var(--linea); border-radius: 28px; padding: 30px; background: #fff; display: flex; flex-direction: column; gap: 14px; }
+.plan.hi { border-color: var(--rosso); box-shadow: 0 30px 60px -30px rgba(var(--rosso-rgb), .4); }
+.plan h3 { font: 800 24px var(--fd); letter-spacing: -.02em; }
+.plan small { font: 600 11px var(--fm); letter-spacing: .1em; text-transform: uppercase; color: var(--rosso-h); }
+.plan .chk li { font-size: 15px; padding: 5px 0; }
+.plan-intro { color: var(--grigio); }
+.plan-foot { font-weight: 600; }
+
+@container st (max-width: 980px) {
+  .split.rev > .vis { order: 0; }
+  .plans { grid-template-columns: 1fr; }
+  .vals { grid-template-columns: 1fr 1fr; }
+}
+@container st (max-width: 640px) {
+  .vals { grid-template-columns: 1fr; }
+  .card--wide { flex-direction: column; }
+}

@@ -1,0 +1,245 @@
+import { SCENES } from './scenes.js';
+import { LLM_TECHNIQUES } from './technologies.js';
+import { todo } from '../components/text.js';
+import { t } from '../lib/i18n.js';
+
+/*
+ * Le sette aree di servizio. Ogni voce genera:
+ *  - la propria pagina (pages/servizi/servizio.js)
+ *  - la card nelle griglie servizi (blocks/services.js)
+ *  - le voci di menu, footer e mappa del sito.
+ *
+ * Campi:
+ *  id, title (nome breve), url, scene, summary (testo della card),
+ *  heroTitle ({…} = rosso), lead, problems, activities, tech, techNote?,
+ *  benefits, ctaTitle, related (id di pagine), extraAction?
+ */
+export const SERVICES = [
+  {
+    id: 'consulenza-ict',
+    title: t('Consulenza ICT', 'ICT Consulting'),
+    url: '/consulenza-ict/',
+    scene: SCENES.orbitTeam,
+    summary: t('Analisi del contesto, roadmap tecnologiche e cyber security per scegliere le soluzioni giuste e proteggere dati e sistemi.', 'Context analysis, technology roadmaps and cyber security to choose the right solutions and protect data and systems.'),
+    heroTitle: t('Consulenza ICT: la {tecnologia giusta} per i tuoi obiettivi.', 'ICT consulting: the {right technology} for your goals.'),
+    lead: t("Scegliere la tecnologia sbagliata costa più che scegliere lentamente. La nostra consulenza ICT parte dal contesto dell'azienda, individua dove migliorare e definisce una roadmap concreta, allineata agli obiettivi di business.", "Choosing the wrong technology costs more than choosing slowly. Our ICT consulting starts from your company's context, identifies where to improve and defines a concrete roadmap aligned with your business goals."),
+    problems: [
+      t('Troppe opzioni tecnologiche e poca chiarezza', 'Too many technology options and too little clarity'),
+      t("Sistemi che non sostengono il modo in cui l'azienda lavora", 'Systems that do not support the way the company works'),
+      t('Rischi informatici non misurati', 'Unmeasured IT risks'),
+      t('Nessuna roadmap condivisa', 'No shared roadmap'),
+    ],
+    activities: [
+      t('Analisi del contesto aziendale e delle aree di miglioramento', 'Analysis of the business context and areas for improvement'),
+      t('Roadmap tecnologiche concrete', 'Concrete technology roadmaps'),
+      t('Affiancamento dei decision-maker nella scelta delle soluzioni più adatte', 'Support for decision-makers in choosing the most suitable solutions'),
+      t('Supporto continuo lungo tutto il percorso di trasformazione digitale', 'Ongoing support throughout the digital transformation journey'),
+      t('Formazione degli utenti sui nuovi sistemi', 'User training on new systems'),
+    ],
+    tech: [t('Approccio indipendente dal fornitore', 'Vendor-independent approach')],
+    techNote: t("La scelta nasce dall'analisi, non dal catalogo.", 'The choice comes from analysis, not from a catalogue.'),
+    benefits: [
+      t('Decisioni tecnologiche motivate', 'Well-founded technology decisions'),
+      t('Un piano con priorità chiare', 'A plan with clear priorities'),
+      t('Rischi informatici individuati e ridotti', 'IT risks identified and reduced'),
+      t('Persone formate sugli strumenti', 'People trained on the tools'),
+    ],
+    ctaTitle: t('Vuoi un parere indipendente sulla tua infrastruttura IT?', 'Would you like an independent view of your IT infrastructure?'),
+    related: ['cloud-solutions', 'cyber-security', 'data-analytics', 'sviluppo-software'],
+  },
+  {
+    id: 'cloud-solutions',
+    title: t('Soluzioni e architetture cloud', 'Cloud Solutions & Architecture'),
+    url: '/cloud-solutions/',
+    scene: SCENES.cloud,
+    summary: t('Architetture scalabili e ad alta disponibilità su AWS, Microsoft Azure e Google Cloud, con migrazioni end-to-end.', 'Scalable, highly available architectures on AWS, Microsoft Azure and Google Cloud, with end-to-end migrations.'),
+    heroTitle: t('Architetture cloud {scalabili}, sicure e sotto controllo.', '{Scalable}, secure cloud architectures, fully under control.'),
+    lead: t("Il cloud rende un'azienda più veloce solo se è progettato bene. Disegniamo e realizziamo architetture moderne, scalabili e ad alta disponibilità sulle principali piattaforme del mercato, e ti seguiamo dalla scelta alla gestione.", 'The cloud only makes a company faster if it is well designed. We design and build modern, scalable, highly available architectures on the leading market platforms, and support you from selection through to management.'),
+    problems: [
+      t('Infrastrutture da mantenere che costano più di quanto rendono', 'Infrastructure that costs more to maintain than it delivers'),
+      t('Applicazioni che non reggono i picchi di utilizzo', 'Applications that cannot cope with usage peaks'),
+      t('Costi cloud che crescono senza controllo', 'Cloud costs growing out of control'),
+      t('Paura di migrare senza interrompere il servizio', 'Concern about migrating without disrupting service'),
+    ],
+    activities: [
+      t('Consulenza per valutare le esigenze e scegliere la soluzione', 'Consulting to assess your needs and choose the solution'),
+      t('Progettazione di architetture cloud moderne, scalabili e ad alta disponibilità', 'Design of modern, scalable, highly available cloud architectures'),
+      t('Migrazioni cloud end-to-end', 'End-to-end cloud migrations'),
+      t('Ottimizzazione delle infrastrutture esistenti, per ridurre i costi operativi e migliorare le prestazioni', 'Optimisation of existing infrastructure to reduce operating costs and improve performance'),
+      t('Elevati standard di sicurezza e conformità', 'High standards of security and compliance'),
+      t('Gestione delle soluzioni nel tempo', 'Ongoing management of solutions'),
+    ],
+    tech: ['Amazon Web Services', 'Microsoft Azure', 'Google Cloud', 'Kubernetes'],
+    benefits: [
+      t("Un'infrastruttura che cresce con il business", 'Infrastructure that grows with your business'),
+      t('Costi operativi più prevedibili', 'More predictable operating costs'),
+      t('Prestazioni migliori', 'Better performance'),
+      t('Un unico partner dalla progettazione alla gestione', 'A single partner from design to management'),
+    ],
+    ctaTitle: t('Stai valutando una migrazione o vuoi ottimizzare il cloud che hai?', 'Considering a migration, or looking to optimise your current cloud?'),
+    related: ['devops', 'consulenza-ict', 'sviluppo-software', 'blog'],
+  },
+  {
+    id: 'data-analytics',
+    title: t('Dati e analytics', 'Data & Analytics'),
+    url: '/data-analytics/',
+    scene: SCENES.globe,
+    summary: t('Strategie data-driven, data pipeline scalabili e dashboard interattive per trasformare i dati in insight.', 'Data-driven strategies, scalable data pipelines and interactive dashboards to turn data into insight.'),
+    heroTitle: t('Dati e analytics: trasforma i dati in {decisioni}.', 'Data & analytics: turn your data into {decisions}.'),
+    lead: t("Aiutiamo i clienti a valorizzare il proprio patrimonio informativo, con strategie data-driven orientate alla competitività aziendale. Un'AI utile parte da dati ordinati.", 'We help clients make the most of their information assets, with data-driven strategies focused on business competitiveness. Useful AI starts with well-organised data.'),
+    problems: [
+      t('Dati aziendali raccolti ma non sfruttati', 'Company data collected but not put to use'),
+      t('Informazioni sparse in sistemi diversi', 'Information scattered across different systems'),
+      t('Report costruiti a mano e poco affidabili', 'Hand-built, unreliable reports'),
+      t('Decisioni prese senza numeri a supporto', 'Decisions made without figures to back them up'),
+    ],
+    activities: [
+      t('Definizione di strategie data-driven', 'Definition of data-driven strategies'),
+      t('Data pipeline scalabili, in grado di processare grandi volumi di dati', 'Scalable data pipelines capable of processing large volumes of data'),
+      t('Processi di pulizia, trasformazione e arricchimento dei dati (ETL/ELT)', 'Data cleansing, transformation and enrichment processes (ETL/ELT)'),
+      t('Dashboard e report interattivi che traducono i dati in insight azionabili', 'Interactive dashboards and reports that turn data into actionable insight'),
+      t("Supporto ai processi decisionali a tutti i livelli dell'organizzazione", 'Support for decision-making at every level of the organisation'),
+    ],
+    tech: ['ETL/ELT', 'Hadoop', t('Dashboard e report interattivi', 'Interactive dashboards and reports')],
+    benefits: [
+      t('Decisioni basate su dati affidabili', 'Decisions based on reliable data'),
+      t('Informazioni accessibili a tutti i livelli', 'Information accessible at every level'),
+      t('Meno lavoro manuale sui report', 'Less manual work on reports'),
+      t("Una base solida per l'intelligenza artificiale", 'A solid foundation for artificial intelligence'),
+    ],
+    ctaTitle: t('Vuoi capire cosa dicono i tuoi dati?', 'Want to understand what your data is telling you?'),
+    related: ['intelligenza-artificiale', 'cloud-solutions', 'consulenza-ict', 'blog'],
+  },
+  {
+    id: 'cyber-security',
+    title: t('Sicurezza informatica', 'Cyber Security'),
+    url: '/cyber-security/',
+    scene: SCENES.shield,
+    summary: t('VAPT, analisi del rischio, IAM e monitoraggio SIEM/SOC per proteggere dati, sistemi e infrastrutture.', 'VAPT, risk analysis, IAM and SIEM/SOC monitoring to protect data, systems and infrastructure.'),
+    heroTitle: t('Cyber security a 360° per proteggere {dati, sistemi} e infrastrutture.', 'End-to-end cyber security to protect {data, systems} and infrastructure.'),
+    lead: t("Offriamo servizi di cyber security a 360° per proteggere dati, sistemi e infrastrutture dei nostri clienti, dall'analisi del rischio al monitoraggio continuo.", "We offer end-to-end cyber security services to protect our clients' data, systems and infrastructure, from risk analysis to continuous monitoring."),
+    problems: [
+      t('Rischi informatici non misurati', 'Unmeasured IT risks'),
+      t('Policy di sicurezza assenti o non applicate', 'Security policies missing or not enforced'),
+      t('Accessi ai sistemi poco controllati', 'Poorly controlled access to systems'),
+      t('Persone non formate sui rischi', 'Staff not trained on the risks'),
+    ],
+    activities: [
+      t('Vulnerability Assessment e Penetration Testing (VAPT)', 'Vulnerability Assessment and Penetration Testing (VAPT)'),
+      t('Analisi del rischio e definizione di policy di sicurezza', 'Risk analysis and definition of security policies'),
+      t('Soluzioni di Identity & Access Management (IAM)', 'Identity & Access Management (IAM) solutions'),
+      t('Monitoraggio continuo delle infrastrutture (SIEM/SOC)', 'Continuous infrastructure monitoring (SIEM/SOC)'),
+      t('Formazione e awareness sulla sicurezza informatica per i team aziendali', 'Cyber security training and awareness for company teams'),
+    ],
+    tech: ['VAPT', 'IAM', 'SIEM / SOC'],
+    benefits: [
+      t('Rischi individuati e ridotti', 'Risks identified and reduced'),
+      t('Accessi sotto controllo', 'Access under control'),
+      t('Infrastrutture monitorate nel tempo', 'Infrastructure monitored over time'),
+      t('Team consapevoli e formati', 'Aware, well-trained teams'),
+    ],
+    ctaTitle: t('Vuoi sapere quanto sono protetti i tuoi sistemi?', 'Want to know how well protected your systems are?'),
+    related: ['consulenza-ict', 'cloud-solutions', 'devops', 'formazione-e-innovazione'],
+  },
+  {
+    id: 'sviluppo-software',
+    title: t('Sviluppo software', 'Software Development'),
+    url: '/progettazione-e-sviluppo-software/',
+    scene: SCENES.cubesSmall,
+    summary: t("Dall'analisi dei requisiti alla messa in produzione: applicazioni web e mobile su misura, con architetture a microservizi e API-first.", 'From requirements analysis to go-live: custom web and mobile applications with microservice and API-first architectures.'),
+    heroTitle: t('Sviluppo software su misura, {dalla prima idea} alla produzione.', 'Custom software development, {from first idea} to production.'),
+    lead: t("Un software utile nasce da un'esigenza capita bene, non da un elenco di funzioni. Gestiamo l'intero ciclo di vita dell'applicazione: raccolta dei requisiti, progettazione, sviluppo, test, messa in produzione e, dopo, manutenzione ed evoluzione.", 'Useful software starts from a well-understood need, not from a list of features. We manage the entire application lifecycle: requirements gathering, design, development, testing, go-live and, afterwards, maintenance and evolution.'),
+    problems: [
+      t('Gestionali che non seguono i processi reali', 'Business software that does not reflect real processes'),
+      t('Sistemi che non dialogano tra loro', 'Systems that do not talk to each other'),
+      t('Applicazioni che invecchiano male e diventano costose da modificare', 'Applications that age badly and become costly to change'),
+      t('Esperienza web e mobile non coerente', 'Inconsistent web and mobile experience'),
+    ],
+    activities: [
+      t('Analisi dei requisiti funzionali e non funzionali', 'Analysis of functional and non-functional requirements'),
+      t('Progettazione architetturale con microservizi, event-driven e API-first', 'Architecture design with microservices, event-driven and API-first approaches'),
+      t('Sviluppo di applicazioni web e mobile, native e cross-platform, curando design, usabilità e prestazioni', 'Development of native and cross-platform web and mobile applications, with close attention to design, usability and performance'),
+      t('Test del software lungo tutto il ciclo di vita: la qualità è verificata prima del rilascio', 'Software testing throughout the lifecycle: quality is verified before release'),
+      t('Metodologie agili: Scrum e Kanban', 'Agile methodologies: Scrum and Kanban'),
+      t('Manutenzione ed evoluzione continua', 'Ongoing maintenance and evolution'),
+    ],
+    tech: ['Java', 'Spring', '.NET Core', 'Node.js', 'Angular', 'React', 'Flutter', 'Android', 'Selenium (testing)'],
+    benefits: [
+      t('Requisiti chiari prima di scrivere codice', 'Clear requirements before any code is written'),
+      t('Rilasci iterativi che puoi vedere e correggere', 'Iterative releases you can see and adjust'),
+      t('Software che si integra con i tuoi sistemi e cresce con te', 'Software that integrates with your systems and grows with you'),
+      t('Qualità verificata dal testing', 'Quality verified through testing'),
+    ],
+    ctaTitle: t("Hai un'applicazione da costruire o da rifare?", 'Do you have an application to build or rebuild?'),
+    related: ['devops', 'cloud-solutions', 'intelligenza-artificiale', 'data-analytics', 'timesheet-connect-cloud'],
+  },
+  {
+    id: 'devops',
+    title: t('DevOps e automazione', 'DevOps & Automation'),
+    url: '/devops/',
+    scene: SCENES.loop,
+    summary: t('Pipeline CI/CD, infrastruttura come codice e container per rilasci più frequenti e più sicuri.', 'CI/CD pipelines, infrastructure as code and containers for more frequent, safer releases.'),
+    heroTitle: t('DevOps e automazione: rilasci {più frequenti} e più sicuri.', 'DevOps & automation: {more frequent}, safer releases.'),
+    lead: t("Un rilascio non dovrebbe essere un evento da temere. Aiutiamo le aziende ad adottare cultura e pratiche DevOps che automatizzano l'intero ciclo di build, test e deploy del software.", 'A release should not be something to fear. We help companies adopt DevOps culture and practices that automate the entire software build, test and deployment cycle.'),
+    problems: [
+      t('Rilasci manuali, lenti e rischiosi', 'Manual, slow and risky releases'),
+      t('Ambienti diversi che producono errori imprevisti', 'Inconsistent environments causing unexpected errors'),
+      t('Poca collaborazione tra chi sviluppa e chi gestisce i sistemi', 'Little collaboration between those who develop and those who run the systems'),
+      t('Sicurezza affrontata a fine progetto', 'Security left until the end of the project'),
+    ],
+    activities: [
+      t('Pipeline CI/CD robuste', 'Robust CI/CD pipelines'),
+      t('Infrastruttura as code con Terraform e Ansible', 'Infrastructure as code with Terraform and Ansible'),
+      t('Containerizzazione e orchestrazione con Docker e Kubernetes', 'Containerisation and orchestration with Docker and Kubernetes'),
+      t('Automazione delle procedure di sviluppo e rilascio', 'Automation of development and release procedures'),
+      t('Miglioramento della collaborazione tra sviluppatori e operatori', 'Better collaboration between developers and operations'),
+      t('Miglioramento della sicurezza del software', 'Improved software security'),
+    ],
+    tech: ['Terraform', 'Ansible', 'Docker', 'Kubernetes', t('Ambienti AWS', 'AWS environments')],
+    benefits: [
+      t('Rilasci più frequenti, più sicuri e con minore rischio operativo', 'More frequent, safer releases with lower operational risk'),
+      t('Ambienti riproducibili', 'Reproducible environments'),
+      t('Meno lavoro manuale ripetitivo', 'Less repetitive manual work'),
+    ],
+    ctaTitle: t('Vuoi automatizzare il percorso dal codice alla produzione?', 'Want to automate the path from code to production?'),
+    related: ['cloud-solutions', 'cyber-security', 'sviluppo-software', 'blog'],
+  },
+  {
+    id: 'intelligenza-artificiale',
+    title: t('Intelligenza artificiale', 'Artificial Intelligence'),
+    url: '/intelligenza-artificiale/',
+    scene: SCENES.neural,
+    summary: t("Chatbot intelligenti e agenti AI che automatizzano processi e si collegano ai sistemi che l'azienda usa già.", 'Intelligent chatbots and AI agents that automate processes and connect to the systems your company already uses.'),
+    label: 'Artificial Intelligence & Generative AI',
+    heroTitle: t('Intelligenza artificiale e {Generative AI} dentro i processi aziendali.', 'Artificial intelligence and {Generative AI} at the heart of business processes.'),
+    lead: t("L'intelligenza artificiale crea valore quando smette di essere un esperimento e diventa parte del lavoro quotidiano. Progettiamo e sviluppiamo soluzioni su misura che automatizzano i processi, migliorano l'efficienza operativa e aprono nuove opportunità, collegandosi ai sistemi che l'azienda usa già.", 'Artificial intelligence creates value when it stops being an experiment and becomes part of everyday work. We design and develop custom solutions that automate processes, improve operational efficiency and open up new opportunities, connecting to the systems your company already uses.'),
+    problems: [
+      t('Attività ripetitive e documentali che assorbono tempo', 'Repetitive, document-heavy tasks that take up time'),
+      t('Informazioni sparse in sistemi diversi e difficili da interrogare', 'Information scattered across different systems and hard to query'),
+      t('Assistenza a clienti e utenti sovraccarica', 'Overloaded customer and user support'),
+      t('Dati aziendali raccolti ma non sfruttati', 'Company data collected but not put to use'),
+    ],
+    activities: [
+      t('Chatbot intelligenti, capaci di gestire interazioni complesse con utenti e clienti', 'Intelligent chatbots capable of handling complex interactions with users and customers'),
+      t('Agenti AI autonomi, che eseguono attività articolate, prendono decisioni e si integrano con i sistemi aziendali esistenti', 'Autonomous AI agents that carry out complex tasks, make decisions and integrate with existing business systems'),
+      t('AI generativa e Large Language Models applicati ai sistemi informativi, come nel progetto SIGENERA (generazione di codice, interrogazione dei sistemi, help desk, verbalizzazione)', 'Generative AI and Large Language Models applied to information systems, as in the SIGENERA project (code generation, system querying, help desk, meeting minutes)'),
+    ],
+    tech: ['Large Language Models', 'Hadoop', ...LLM_TECHNIQUES],
+    techNote: t(
+      `Fine-tuning, RAG, quantizzazione e prompting avanzato sono le tecniche affrontate nel progetto SIGENERA. Strumenti e modelli usati nei progetti per i clienti: ${todo()}`,
+      `Fine-tuning, RAG, quantisation and advanced prompting are the techniques explored in the SIGENERA project. Tools and models used in client projects: ${todo()}`,
+    ),
+    benefits: [
+      t('Meno tempo su attività manuali', 'Less time spent on manual tasks'),
+      t('Accesso più rapido alle informazioni', 'Faster access to information'),
+      t('Risposte più coerenti verso clienti e utenti', 'More consistent answers for customers and users'),
+      t('Soluzioni integrate nei sistemi, non strumenti isolati', 'Solutions integrated into your systems, not isolated tools'),
+    ],
+    ctaTitle: t("Dove può aiutarti l'AI nella tua azienda?", 'Where can AI help your business?'),
+    related: ['sigenera', 'data-analytics', 'timesheet-connect-cloud', 'cloud-solutions', 'blog'],
+    extraAction: { to: 'sigenera', label: t('Vedi il progetto SIGENERA', 'See the SIGENERA project'), variant: 'outline' },
+  },
+];
+
+export const SERVICE_IDS = SERVICES.map((s) => s.id);
+export const getService = (id) => SERVICES.find((s) => s.id === id);

@@ -1,0 +1,141 @@
+/* Apertura di pagina (components/hero.js), carosello e numeri chiave della home. */
+.hero { position: relative; padding: clamp(40px, 6cqi, 90px) 0 clamp(36px, 5cqi, 70px); }
+.hero::before { content: ""; position: absolute; left: -5%; top: -10%; width: 20%; height: 125%; background: linear-gradient(100deg, rgba(var(--rosso-rgb), .1), rgba(var(--rosso-rgb), 0)); transform: skewX(-28deg); }
+.hero::after { content: ""; position: absolute; left: 9%; top: -10%; width: 10%; height: 60%; background: linear-gradient(100deg, rgba(11, 18, 32, .05), rgba(11, 18, 32, 0)); transform: skewX(-28deg); }
+.hero .in { position: relative; z-index: 1; display: grid; grid-template-columns: 1.02fr 1fr; align-items: center; gap: 10px; }
+.hero .h1 { margin-top: 20px; }
+.hero .lead { margin-top: 6px; }
+.hero .actions { gap: 14px; margin-top: 34px; }
+
+.hero-visual { position: relative; aspect-ratio: 1/1; margin-right: -4%; }
+.hero-visual canvas { position: absolute; inset: 0; }
+
+/* Pagine interne: hero più basso, scena in un riquadro */
+.hero--page { padding: clamp(28px, 4cqi, 64px) 0 clamp(28px, 4cqi, 56px); }
+.hero--page .hero-visual { aspect-ratio: 5/4; margin-right: 0; border-radius: 32px; border: 1px solid var(--linea); background: var(--scene-bg); overflow: hidden; }
+.hero-visual > .fw--fill { height: 100%; }
+
+/* Numeri chiave (home) */
+.hero-proof { display: flex; gap: clamp(18px, 3cqi, 44px); flex-wrap: wrap; margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--linea); }
+.hero-proof div { font: 600 11px var(--fm); letter-spacing: .1em; text-transform: uppercase; color: var(--grigio); }
+.hero-proof b { display: block; font: 800 28px var(--fd); letter-spacing: -.02em; color: var(--ink); text-transform: none; }
+
+/* Briciole di pane */
+.crumb { font: 600 11px var(--fm); letter-spacing: .1em; text-transform: uppercase; color: var(--grigio); display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.crumb a:hover { color: var(--rosso-h); }
+.crumb span::before { content: "/"; margin-right: 8px; color: var(--rosso); }
+
+/* Etichette di vetro fluttuanti */
+.glass { background: rgba(255, 255, 255, .64); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); border: 1px solid rgba(255, 255, 255, .95); box-shadow: var(--sh), inset 0 1px 0 #fff; border-radius: 20px; }
+.float { position: absolute; z-index: 2; padding: 10px 16px; font: 600 12px var(--fm); letter-spacing: .06em; display: flex; align-items: center; gap: 8px; animation: fl 6s ease-in-out infinite; }
+.float i { width: 8px; height: 8px; border-radius: 50%; background: var(--rosso); box-shadow: 0 0 10px var(--rosso-l); }
+.float--1 { left: 4%; top: 14%; }
+.float--2 { right: 4%; top: 42%; animation-delay: -2s; }
+.float--3 { left: 8%; bottom: 12%; animation-delay: -4s; }
+@keyframes fl { 50% { transform: translateY(-12px); } }
+
+
+@container st (max-width: 980px) {
+  .hero .in { grid-template-columns: 1fr; }
+  .hero-visual { max-width: 560px; margin: 0 auto; width: 100%; }
+  .hero--page .hero-visual { margin: 0 auto; }
+}
+@container st (max-width: 640px) {
+  .hero-proof b { font-size: 22px; }
+}
+
+/*
+ * Apertura della home: pannello vinaccia arrotondato con un alone morbido attorno (components/slider.js).
+ * Movimento misurato: dissolvenza tra i messaggi, il testo sale appena,
+ * un bagliore caldo si sposta molto lentamente sullo sfondo del pannello.
+ */
+.slider { padding: clamp(28px, 3cqi, 44px) 0 clamp(40px, 4cqi, 60px); }
+.slider-panel { position: relative; isolation: isolate; color: #fff; border-radius: clamp(20px, 2.4cqi, 32px);
+  /* contorno chiaro ma morbido: alone dello stesso colore che si dissolve nel bianco */
+  box-shadow: 0 0 0 1px rgba(74, 28, 33, .35), 0 0 36px 4px rgba(74, 28, 33, .28), 0 24px 70px -18px rgba(42, 20, 23, .55); display: grid; grid-template-columns: 1fr; padding: clamp(28px, 4cqi, 56px) clamp(22px, 4.4cqi, 64px); }
+.slider-panel--aside { grid-template-columns: minmax(0, 1fr) minmax(220px, 300px); gap: clamp(24px, 5cqi, 80px); align-items: center; }
+
+/* Bagliore: unico elemento in movimento continuo, lento (24 s) */
+.slider-deco { position: absolute; z-index: -1; inset: 0; overflow: hidden; border-radius: inherit; pointer-events: none;
+  background: var(--grad-rosso); }
+.slider-glow { position: absolute; width: 70%; aspect-ratio: 1; right: -18%; top: -55%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 110, 96, .45), rgba(255, 110, 96, .12) 55%, transparent); will-change: transform; animation: glow 24s ease-in-out infinite alternate; pointer-events: none; }
+@keyframes glow { to { transform: translate(-30%, 45%) scale(1.15); } }
+/* Trama leggera a puntini, solo sul lato destro */
+.slider-deco::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, .14) 1px, transparent 1.5px); background-size: 22px 22px; -webkit-mask-image: linear-gradient(100deg, transparent 35%, #000 100%); mask-image: linear-gradient(100deg, transparent 35%, #000 100%); pointer-events: none; }
+
+
+/* Dettagli attorno al pannello: spuntano da dietro i bordi (stanno sotto il pannello) */
+.slider-around { position: absolute; z-index: -2; pointer-events: none; }
+.slider-around--dots-a, .slider-around--dots-b { width: clamp(140px, 16cqi, 240px); aspect-ratio: 3 / 2; background-image: radial-gradient(rgba(var(--rosso-rgb), .45) 1.3px, transparent 1.8px); background-size: 16px 16px; -webkit-mask-image: radial-gradient(closest-side, #000 40%, transparent); mask-image: radial-gradient(closest-side, #000 40%, transparent); }
+.slider-around--dots-a { top: -48px; left: 24%; }
+.slider-around--dots-b { bottom: -70px; left: 3%; }
+/* Due anelli sottili che spuntano sotto il pannello, con un «satellite» che gira piano (90 s a giro) */
+.slider-orbit { width: clamp(200px, 20cqi, 280px); aspect-ratio: 1; bottom: 0; right: 9%; transform: translateY(50%); border-radius: 50%; border: 1px solid rgba(var(--rosso-rgb), .22); }
+.slider-orbit::before { content: ""; position: absolute; inset: 16%; border-radius: 50%; border: 1px dashed rgba(var(--rosso-rgb), .3); }
+.slider-orbit i { position: absolute; inset: 0; border-radius: 50%; animation: orbit 90s linear infinite; }
+.slider-orbit i::before { content: ""; position: absolute; top: 50%; left: -5px; width: 9px; height: 9px; border-radius: 50%; background: var(--rosso); box-shadow: 0 0 0 4px rgba(var(--rosso-rgb), .14); }
+@keyframes orbit { to { transform: rotate(360deg); } }
+
+.slider-main { min-width: 0; display: flex; flex-direction: column; gap: clamp(20px, 2.6cqi, 36px); }
+.slider-view { display: grid; touch-action: pan-y; }
+.slide { grid-area: 1 / 1; position: relative; display: flex; align-items: center; opacity: 0; visibility: hidden; transition: opacity 1s ease, visibility 0s 1s; }
+.slide.is-active { opacity: 1; visibility: visible; transition: opacity 1s ease; }
+.slide-tx { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; max-width: 36em; }
+.slide .lab { color: var(--corallo); font-size: 11px; }
+.slide .lab::before { background: var(--corallo); }
+.slide-title { font: 800 clamp(28px, 3.4cqi, 46px)/1.08 var(--fd); letter-spacing: -.03em; text-wrap: balance; color: #fff; }
+.slide-title .r { color: var(--corallo); }
+.slide-text { font-size: clamp(16px, 1.4cqi, 18px); color: rgba(255, 255, 255, .72); margin-bottom: 6px; }
+.slide .btn-p { background: #fff; color: var(--rosso); box-shadow: none; }
+.slide .btn-p:hover { background: var(--vino); color: #fff; }
+.slide-visual { display: none; }
+
+/* Il testo sale appena quando la slide entra */
+.slide-tx > * { opacity: 0; transform: translateY(10px); transition: opacity .7s ease, transform .7s ease; }
+.slide.is-active .slide-tx > * { opacity: 1; transform: none; }
+.slide.is-active .slide-tx > :nth-child(2) { transition-delay: .1s; }
+.slide.is-active .slide-tx > :nth-child(3) { transition-delay: .2s; }
+.slide.is-active .slide-tx > :nth-child(4) { transition-delay: .3s; }
+
+/* Variante con foto */
+.slide-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 16px; opacity: .35; }
+
+/* Comandi: barre di avanzamento + frecce, sotto il testo */
+.slider-ui { display: flex; align-items: center; gap: 18px; }
+.slider-dots { display: flex; gap: 4px; }
+.slider-dots button { background: none; border: 0; cursor: pointer; padding: 12px 3px; }
+.slider-bar { display: block; width: 40px; height: 2px; background: rgba(255, 255, 255, .2); overflow: hidden; }
+.slider-dots button:hover .slider-bar { background: rgba(255, 255, 255, .4); }
+.slider-bar i { display: block; height: 100%; width: 100%; background: #fff; transform: scaleX(0); transform-origin: left; }
+.slider-dots .is-active .slider-bar i { animation: slide-prog var(--slide-time) linear forwards; }
+.slider.is-paused .slider-bar i, .slider.is-paused .slider-glow, .slider.is-paused .slider-orbit i { animation-play-state: paused; }
+@keyframes slide-prog { to { transform: scaleX(1); } }
+.slider-arrows { display: flex; gap: 6px; }
+.slider-arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .22); background: transparent; color: #fff; cursor: pointer; display: grid; place-items: center; transition: border-color .2s, background .2s; }
+.slider-arrow:hover { border-color: #fff; background: rgba(255, 255, 255, .08); }
+.slider-arrow svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.slider :focus-visible { outline-color: #fff; }
+
+/* Numeri chiave: scheda «di vetro» fissa a destra del pannello */
+.slider-aside { position: relative; }
+.figures { display: grid; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .12); border-radius: 20px; }
+.figures li { display: grid; gap: 2px; padding: 18px 24px; }
+.figures li + li { border-top: 1px solid rgba(255, 255, 255, .1); }
+.figures b { font: 800 clamp(26px, 2.6cqi, 34px)/1.05 var(--fd); letter-spacing: -.03em; color: #fff; }
+.figures span { font: 600 11px var(--fm); letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
+
+@container st (max-width: 980px) {
+  .slider-panel--aside { grid-template-columns: 1fr; }
+  .figures { grid-template-columns: repeat(3, 1fr); }
+  .figures li { padding: 16px 18px; }
+  .figures li + li { border-top: 0; border-left: 1px solid rgba(255, 255, 255, .1); }
+}
+@container st (max-width: 640px) {
+  .slider-arrows, .slider-orbit { display: none; }
+  .figures li { padding: 14px 12px; }
+  .figures span { font-size: 10px; letter-spacing: .06em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide-tx > * { opacity: 1; transform: none; }
+  .slider-dots .is-active .slider-bar i { transform: none; }
+}

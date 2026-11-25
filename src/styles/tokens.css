@@ -1,0 +1,31 @@
+/* Variabili di design: colori, ombre, font. */
+:root {
+  --rosso: #A30000;     /* rosso del marchio (sito attuale) */
+  --rosso-rgb: 163, 0, 0;
+  --rosso-h: #7A0000;
+  --rosso-l: #FF5A52;   /* rosso chiaro: accenti su fondo scuro */
+  --rosso-t: #FDECEE;
+  --bianco: #fff;
+  --nebbia: #F4F5F7;
+  --linea: #E3E6EB;
+  --ink: #0B1220;
+  --ant: #1C2733;
+  --grigio: #556070;
+  --notte: #0E0F12;     /* quasi nero */
+  --vino: #4C060B;      /* rosso scuro: base dei pannelli della home */
+  --crema: #FBF6F5;     /* bianco caldo: sfondi alternati della home e footer */
+  --grad-rosso: linear-gradient(135deg, #4C060B 0%, #730A12 55%, #940E17 100%); /* pannelli: apertura, SIGENERA, card finale */
+  --corallo: #FF8A7E;   /* rosso chiaro caldo: accenti su fondo scuro */
+
+  --sh: 0 24px 60px -24px rgba(11, 18, 32, .22);
+  --sh-red: 0 30px 60px -28px rgba(var(--rosso-rgb), .35);
+  --border-red: rgba(var(--rosso-rgb), .4);
+  /* sfondo sfumato dietro le scene 3D */
+  --scene-bg: radial-gradient(120% 90% at 70% 30%, #fff 0, #FCF0F1 45%, #F4F5F7 100%);
+
+  --fd: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+  --fb: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --fm: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  --barh: 52px; /* altezza della barra di anteprima (in basso), aggiornata da JS */
+}

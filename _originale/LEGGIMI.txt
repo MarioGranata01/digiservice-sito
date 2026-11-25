@@ -1,0 +1,5 @@
+Digiservice - bozza del nuovo sito (design "Luce")
+
+Apri index.html con un doppio clic (serve connessione internet solo per i font Google).
+File: index.html (struttura), style.css (stili), engine.js (visual 3D), site.js (menu, pagine e contenuti), logo.png.
+I contenuti delle 23 pagine sono in site.js. La barra grigia in alto e il selettore Desktop/Tablet/Mobile servono solo per l'anteprima.

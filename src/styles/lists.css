@@ -1,0 +1,66 @@
+/* Elenchi e righe (components/lists.js, blocks/news.js, pages/mappa.js). */
+
+/* Elenco con trattino rosso */
+.chk li { display: flex; gap: 12px; padding: 7px 0; color: var(--ant); }
+.chk li::before { content: ""; flex: none; width: 14px; height: 2px; background: var(--rosso); margin-top: .85em; }
+
+/* Linea del tempo */
+.tl { display: grid; border-top: 1px solid var(--linea); }
+.tl div { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--linea); align-items: baseline; }
+.tl b { font: 800 22px var(--fd); color: var(--rosso-h); }
+
+/* Passi numerati */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.steps > div { border-top: 3px solid var(--rosso); padding-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+.steps span { font: 600 12px var(--fm); color: var(--rosso-h); letter-spacing: .12em; }
+.steps p { color: var(--grigio); font-size: 15px; }
+
+/* FAQ */
+.faq { display: grid; gap: 10px; max-width: 56em; }
+.faq details { border: 1px solid var(--linea); border-radius: 18px; padding: 18px 22px; background: #fff; }
+.faq summary { font: 700 17px var(--fd); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::after { content: "+"; color: var(--rosso); font-size: 22px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq p { margin-top: 10px; color: var(--grigio); }
+
+/* Righe con stato */
+.status-list { display: grid; gap: 10px; }
+.status-row { display: flex; align-items: center; gap: 18px; padding: 18px 24px; border: 1px solid var(--linea); border-radius: 24px; background: #fff; }
+.status-row .st { min-width: 104px; text-align: center; }
+.status-row p { color: var(--ink); font-weight: 500; }
+
+/* Lista di definizioni (riferimenti) */
+.info { display: grid; gap: 14px; }
+.info div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding-top: 14px; border-top: 1px solid var(--linea); }
+.info dt { font: 600 11px var(--fm); letter-spacing: .12em; text-transform: uppercase; color: var(--grigio); padding-top: 3px; }
+.info dd { font-weight: 500; color: var(--ink); }
+
+/* Righe evento */
+.evrow { display: grid; grid-template-columns: 150px 1fr auto; gap: 24px; align-items: center; padding: 22px 8px; border-top: 1px solid var(--linea); }
+.evrow:last-child { border-bottom: 1px solid var(--linea); }
+.evrow h3 { font: 700 clamp(18px, 2cqi, 24px)/1.25 var(--fd); }
+.evrow p { color: var(--grigio); font-size: 15px; margin-top: 4px; }
+
+/* Segnaposto loghi */
+.logos { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.logos.c3 { grid-template-columns: repeat(3, 1fr); }
+.logoph { height: 72px; border: 1.5px dashed #BCC2CC; border-radius: 16px; display: grid; place-items: center; text-align: center; padding: 6px; font: 600 11px var(--fm); letter-spacing: .1em; text-transform: uppercase; color: var(--grigio); background: #fff; }
+
+/* Mappa del sito */
+.map-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.map-g .box a { font: 600 15px var(--fb); color: var(--ant); display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid var(--linea); }
+.map-g .box a:hover { color: var(--rosso-h); }
+.map-g .box a em { font: 500 11px var(--fm); color: var(--grigio); font-style: normal; }
+
+@container st (max-width: 980px) {
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .tl div { grid-template-columns: 90px 1fr; }
+  .evrow { grid-template-columns: 1fr; gap: 8px; }
+  .logos { grid-template-columns: repeat(3, 1fr); }
+  .map-g { grid-template-columns: 1fr 1fr; }
+}
+@container st (max-width: 640px) {
+  .steps, .map-g { grid-template-columns: 1fr; }
+  .info div { grid-template-columns: 1fr; gap: 2px; }
+  .logos, .logos.c3 { grid-template-columns: repeat(2, 1fr); }
+}

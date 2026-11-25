@@ -1,0 +1,13 @@
+/* Moduli (components/forms.js). */
+.inp { font: 500 16px var(--fb); padding: 15px 18px; border-radius: 14px; border: 1.5px solid var(--linea); background: #fff; color: var(--ink); width: 100%; min-width: 0; }
+.inp:focus { outline: 3px solid rgba(var(--rosso-rgb), .25); border-color: var(--rosso); }
+.sel { appearance: none; background: #fff; }
+textarea.inp { min-height: 110px; resize: vertical; }
+
+/* Pannello di vetro sopra la scena */
+.fc { position: relative; margin: clamp(16px, 3cqi, 40px); padding: clamp(20px, 3cqi, 34px); background: rgba(255, 255, 255, .9); backdrop-filter: blur(10px); border-radius: 24px; box-shadow: var(--sh); display: grid; gap: 14px; }
+.fc label { font: 600 12px var(--fm); letter-spacing: .08em; text-transform: uppercase; color: var(--grigio); display: grid; gap: 6px; }
+.fc .pv { font: 500 14px var(--fb); color: var(--ant); display: flex; gap: 10px; align-items: flex-start; text-transform: none; letter-spacing: 0; }
+.fc .pv input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--rosso); }
+.fc button { justify-self: start; }
+.fmsg { font: 600 13px var(--fm); color: var(--rosso-h); min-height: 1.4em; }
