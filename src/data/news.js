@@ -45,13 +45,13 @@ export const BLOG_CATEGORIES = [
 export const EVENTS = [
   {
     when: t('Settembre 2026', 'September 2026'),
-    title: t('SIGENERA a HYDRA 2026', 'SIGENERA at HYDRA 2026'),
+    title: t('SiGENERA a HYDRA 2026', 'SiGENERA at HYDRA 2026'),
     text: t('Presentazione del progetto di ricerca a Klagenfurt, 8 settembre 2026.', 'Presentation of the research project in Klagenfurt, 8 September 2026.'),
-    link: { url: EXTERNAL.sigenera, label: t('Sito SIGENERA', 'SIGENERA website') },
+    link: { url: EXTERNAL.sigenera, label: t('Sito SiGENERA', 'SiGENERA website') },
     upcoming: true,
     card: {
       date: t('8 settembre 2026', '8 September 2026'),
-      title: t('SIGENERA a HYDRA 2026, Klagenfurt', 'SIGENERA at HYDRA 2026, Klagenfurt'),
+      title: t('SiGENERA a HYDRA 2026, Klagenfurt', 'SiGENERA at HYDRA 2026, Klagenfurt'),
       summary: t('Presentazione del progetto di ricerca. Link esterno a sigenera.eu.', 'Presentation of the research project. External link to sigenera.eu.'),
       scene: SCENES.globeLite,
     },

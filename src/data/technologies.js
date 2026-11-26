@@ -12,14 +12,14 @@ export const TECH_GROUPS = [
   [t('Mobile e DevOps', 'Mobile & DevOps'), ['Flutter', 'Android', 'Kubernetes']],
 ];
 
-/* Partner del progetto SIGENERA e collaboratori: home e pagina SIGENERA. */
+/* Partner del progetto SiGENERA e collaboratori: home e pagina SiGENERA. */
 export const PARTNERS = ['ID Technology', 'Tecnoinnovis', t('Università della Calabria', 'University of Calabria')];
 export const COLLABORATORS = ['ICAR-CNR', 'Revelis'];
-/* Collaborazioni qualificate in home (indipendenti da SIGENERA): nome + tipo di realtà. */
+/* Collaborazioni qualificate in home (indipendenti da SiGENERA): nome + tipo di realtà. */
 export const COLLABORATIONS = [
   ['ICAR-CNR', t('Ricerca', 'Research'), t('Istituto di Calcolo e Reti ad Alte Prestazioni del CNR', 'High Performance Computing and Networking Institute of the Italian National Research Council (CNR)')],
   ['Revelis', t('Impresa', 'Company'), t('Partner tecnologico', 'Technology partner')],
 ];
 
-/* Tecniche di ricerca su LLM affrontate in SIGENERA. */
+/* Tecniche di ricerca su LLM affrontate in SiGENERA. */
 export const LLM_TECHNIQUES = ['Fine-tuning', 'RAG', t('Quantizzazione', 'Quantisation'), t('Prompting avanzato', 'Advanced prompting')];

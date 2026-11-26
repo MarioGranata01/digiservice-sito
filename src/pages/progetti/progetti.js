@@ -13,7 +13,7 @@ export default () => [
     label: t('Progetti', 'Projects'),
     title: t('Progetti di ricerca e {innovazione}.', 'Research and {innovation} projects.'),
     lead: t("Partecipiamo a progetti di ricerca e sviluppo insieme a imprese, università e centri di ricerca per portare le tecnologie più avanzate, a partire dall'AI generativa, dentro applicazioni concrete.", 'We take part in research and development projects with companies, universities and research centres to bring the most advanced technologies, starting with generative AI, into real-world applications.'),
-    actions: [primary('sigenera', t('Il progetto SIGENERA', 'The SIGENERA project'))],
+    actions: [primary('sigenera', t('Il progetto SiGENERA', 'The SiGENERA project'))],
     scene: SCENES.globe,
   }),
   section({ tight: true }, filters([t('Tutti', 'All'), 'AI', 'Cloud', 'Software'], t('Filtri', 'Filters')) + grid([
@@ -21,7 +21,7 @@ export default () => [
       scene: SCENES.globeLite,
       tag: 'AI',
       status: status('go', t('In corso', 'In progress')),
-      title: 'SIGENERA',
+      title: 'SiGENERA',
       text: t('Piattaforma basata su LLM per generare codice, assistere gli studenti e verbalizzare le riunioni. Digiservice è impresa capofila.', 'An LLM-based platform for generating code, assisting students and taking meeting minutes. Digiservice is the lead partner.'),
       link: { to: 'sigenera', label: t('Leggi il progetto', 'Read about the project') },
     }),

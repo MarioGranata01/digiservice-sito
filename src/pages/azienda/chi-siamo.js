@@ -11,8 +11,8 @@ import { t } from '../../lib/i18n.js';
 const HISTORY = [
   ['2022', t('Nasce Digiservice', 'Digiservice is founded')],
   ['2023', t(`TimeSheet Connect entra in Digiservice ${todo('[DA VERIFICARE: data esatta]')}`, `TimeSheet Connect joins Digiservice ${todo('[DA VERIFICARE: data esatta]')}`)],
-  ['2025', t('Avvio del progetto SIGENERA', 'The SIGENERA project starts')],
-  ['2026', t('SIGENERA presentato a HYDRA 2026, Klagenfurt (8 settembre)', 'SIGENERA presented at HYDRA 2026, Klagenfurt (8 September)')],
+  ['2025', t('Avvio del progetto SiGENERA', 'The SiGENERA project starts')],
+  ['2026', t('SiGENERA presentato a HYDRA 2026, Klagenfurt (8 settembre)', 'SiGENERA presented at HYDRA 2026, Klagenfurt (8 September)')],
 ];
 
 const APPROACH = [
@@ -56,7 +56,7 @@ export default () => [
     prose: true,
     label: t('La nostra storia', 'Our story'),
     title: t("Dal 2022, {un passo} dopo l'altro", 'Since 2022, {one step} at a time'),
-    body: paragraphs([t("Digiservice nasce nel 2022 dall'esperienza decennale di professionisti del settore, con consulenza, sviluppo, manutenzione e testing del software in domini applicativi diversi. Negli anni l'offerta si è allargata alle architetture cloud, all'analisi dei dati e alla cyber security. Più di recente è arrivata l'intelligenza artificiale, con chatbot e agenti intelligenti. Oggi Digiservice è impresa capofila del progetto di ricerca SIGENERA.", 'Digiservice was founded in 2022, drawing on industry professionals\' ten years of experience in software consulting, development, maintenance and testing across different application domains. Over the years our offering has expanded to cloud architectures, data analytics and cyber security. More recently came artificial intelligence, with chatbots and intelligent agents. Today Digiservice is the lead company of the SIGENERA research project.')]),
+    body: paragraphs([t("Digiservice nasce nel 2022 dall'esperienza decennale di professionisti del settore, con consulenza, sviluppo, manutenzione e testing del software in domini applicativi diversi. Negli anni l'offerta si è allargata alle architetture cloud, all'analisi dei dati e alla cyber security. Più di recente è arrivata l'intelligenza artificiale, con chatbot e agenti intelligenti. Oggi Digiservice è impresa capofila del progetto di ricerca SiGENERA.", 'Digiservice was founded in 2022, drawing on industry professionals\' ten years of experience in software consulting, development, maintenance and testing across different application domains. Over the years our offering has expanded to cloud architectures, data analytics and cyber security. More recently came artificial intelligence, with chatbots and intelligent agents. Today Digiservice is the lead company of the SiGENERA research project.')]),
     aside: timeline(HISTORY),
   }),
 

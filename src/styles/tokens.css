@@ -14,7 +14,7 @@
   --notte: #0E0F12;     /* quasi nero */
   --vino: #4C060B;      /* rosso scuro: base dei pannelli della home */
   --crema: #FBF6F5;     /* bianco caldo: sfondi alternati della home e footer */
-  --grad-rosso: linear-gradient(135deg, #4C060B 0%, #730A12 55%, #940E17 100%); /* pannelli: apertura, SIGENERA, card finale */
+  --grad-rosso: linear-gradient(135deg, #4C060B 0%, #730A12 55%, #940E17 100%); /* pannelli: apertura, SiGENERA, card finale */
   --corallo: #FF8A7E;   /* rosso chiaro caldo: accenti su fondo scuro */
 
   --sh: 0 24px 60px -24px rgba(11, 18, 32, .22);

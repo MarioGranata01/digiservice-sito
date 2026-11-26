@@ -222,12 +222,12 @@ export const SERVICES = [
     activities: [
       t('Chatbot intelligenti, capaci di gestire interazioni complesse con utenti e clienti', 'Intelligent chatbots capable of handling complex interactions with users and customers'),
       t('Agenti AI autonomi, che eseguono attività articolate, prendono decisioni e si integrano con i sistemi aziendali esistenti', 'Autonomous AI agents that carry out complex tasks, make decisions and integrate with existing business systems'),
-      t('AI generativa e Large Language Models applicati ai sistemi informativi, come nel progetto SIGENERA (generazione di codice, interrogazione dei sistemi, help desk, verbalizzazione)', 'Generative AI and Large Language Models applied to information systems, as in the SIGENERA project (code generation, system querying, help desk, meeting minutes)'),
+      t('AI generativa e Large Language Models applicati ai sistemi informativi, come nel progetto SiGENERA (generazione di codice, interrogazione dei sistemi, help desk, verbalizzazione)', 'Generative AI and Large Language Models applied to information systems, as in the SiGENERA project (code generation, system querying, help desk, meeting minutes)'),
     ],
     tech: ['Large Language Models', 'Hadoop', ...LLM_TECHNIQUES],
     techNote: t(
-      `Fine-tuning, RAG, quantizzazione e prompting avanzato sono le tecniche affrontate nel progetto SIGENERA. Strumenti e modelli usati nei progetti per i clienti: ${todo()}`,
-      `Fine-tuning, RAG, quantisation and advanced prompting are the techniques explored in the SIGENERA project. Tools and models used in client projects: ${todo()}`,
+      `Fine-tuning, RAG, quantizzazione e prompting avanzato sono le tecniche affrontate nel progetto SiGENERA. Strumenti e modelli usati nei progetti per i clienti: ${todo()}`,
+      `Fine-tuning, RAG, quantisation and advanced prompting are the techniques explored in the SiGENERA project. Tools and models used in client projects: ${todo()}`,
     ),
     benefits: [
       t('Meno tempo su attività manuali', 'Less time spent on manual tasks'),
@@ -237,7 +237,7 @@ export const SERVICES = [
     ],
     ctaTitle: t("Dove può aiutarti l'AI nella tua azienda?", 'Where can AI help your business?'),
     related: ['sigenera', 'data-analytics', 'timesheet-connect-cloud', 'cloud-solutions', 'blog'],
-    extraAction: { to: 'sigenera', label: t('Vedi il progetto SIGENERA', 'See the SIGENERA project'), variant: 'outline' },
+    extraAction: { to: 'sigenera', label: t('Vedi il progetto SiGENERA', 'See the SiGENERA project'), variant: 'outline' },
   },
 ];
 

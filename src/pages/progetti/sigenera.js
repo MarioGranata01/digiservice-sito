@@ -29,9 +29,9 @@ const RESULTS = [
 
 export default () => [
   hero({
-    crumb: [[t('Progetti', 'Projects'), 'progetti'], ['SIGENERA']],
+    crumb: [[t('Progetti', 'Projects'), 'progetti'], ['SiGENERA']],
     label: t('Progetto di ricerca e sviluppo', 'Research and development project'),
-    title: t('SIGENERA: ricerca applicata su IA generativa e {modelli linguistici}.', 'SIGENERA: applied research on generative AI and {language models}.'),
+    title: t('SiGENERA: ricerca applicata su IA generativa e {modelli linguistici}.', 'SiGENERA: applied research on generative AI and {language models}.'),
     lead: t("L'intelligenza artificiale generativa messa alla prova su casi d'uso reali. Un progetto di ricerca e sviluppo di cui Digiservice è impresa capofila.", 'Generative artificial intelligence put to the test on real-world use cases. A research and development project in which Digiservice is the lead partner.'),
     actions: [external(EXTERNAL.sigenera, t('Vai al sito del progetto', 'Visit the project website'), 'primary'), outline('contatti', t('Parla con noi del progetto', 'Talk to us about the project'))],
     scene: SCENES.globeLite,
@@ -44,7 +44,7 @@ export default () => [
     label: t('Di cosa si tratta', 'What it is about'),
     title: t('Una piattaforma basata su {Large Language Models}', 'A platform based on {Large Language Models}'),
     body: paragraphs([
-      t("SIGENERA è una piattaforma basata su Large Language Models per generare codice, assistere gli studenti universitari e verbalizzare le riunioni. È sviluppata con ID Technology, Tecnoinnovis e Università della Calabria nell'ambito del PR Calabria FESR+ FSE+ 2021-2027.", 'SIGENERA is a platform based on Large Language Models for generating code, assisting university students and taking meeting minutes. It is being developed with ID Technology, Tecnoinnovis and the University of Calabria under the PR Calabria FESR+ FSE+ 2021-2027 programme.'),
+      t("SiGENERA è una piattaforma basata su Large Language Models per generare codice, assistere gli studenti universitari e verbalizzare le riunioni. È sviluppata con ID Technology, Tecnoinnovis e Università della Calabria nell'ambito del PR Calabria FESR+ FSE+ 2021-2027.", 'SiGENERA is a platform based on Large Language Models for generating code, assisting university students and taking meeting minutes. It is being developed with ID Technology, Tecnoinnovis and the University of Calabria under the PR Calabria FESR+ FSE+ 2021-2027 programme.'),
       todo('[DA VERIFICARE: linea di finanziamento e testo ufficiale di presentazione]'),
     ]),
     scene: SCENES.neural,
