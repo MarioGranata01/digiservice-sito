@@ -19,6 +19,8 @@ export const addressHtml = () => COMPANY.address.join('<br>');
 export const EXTERNAL = {
   timesheet: 'https://www.gestione-dipendenti.it/',
   sigenera: 'https://www.sigenera.eu/',
+  archiviart: 'https://www.archiviart.com/it',
+  archiviartAccess: 'https://www.archiviart.com/it#access',
 };
 
 /*

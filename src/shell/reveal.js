@@ -10,7 +10,7 @@ import { $$ } from '../lib/html.js';
 const TARGETS = [
   '.head-row', '.about-tx', '.about-values',
   '.svc-grid .card', '.svc-more',
-  '.pt-main', '.pt-box',
+  '.pt-main', '.pt-box', '.pt-prod',
   '.ft-cta', '.ft .g > div',
 ].join(',');
 

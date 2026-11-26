@@ -6,10 +6,10 @@ import { link } from '../components/links.js';
 import { servicesGrid } from '../blocks/services.js';
 import { keyFigures } from '../blocks/figures.js';
 import { aboutIntro } from '../blocks/about.js';
-import { partnersShowcase } from '../blocks/partners.js';
+import { projectsShowcase } from '../blocks/partners.js';
 import { SLIDES, SLIDE_SECONDS } from '../data/slides.js';
 
-/* Home essenziale: apertura, chi siamo in breve, servizi, partner. */
+/* Home essenziale: apertura, chi siamo in breve, servizi, progetti e prodotti. */
 export default () => [
   slider({
     slides: SLIDES,
@@ -31,6 +31,6 @@ export default () => [
     + `<div class="svc-more">${link('servizi', t('Scopri tutti i servizi', 'Explore all services'), 'primary')}</div>`),
 
   section({ cls: 'partners' },
-    headRow(t('Partner e collaborazioni', 'Partners and collaborations'), t('Le realtà con cui {costruiamo} innovazione', 'The organisations we {build} innovation with'))
-    + partnersShowcase()),
+    headRow(t('Progetti e prodotti', 'Projects and products'), t('Idee che diventano {soluzioni}', 'Ideas that become {solutions}'))
+    + projectsShowcase()),
 ].join('');

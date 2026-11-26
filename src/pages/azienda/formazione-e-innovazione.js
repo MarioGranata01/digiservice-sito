@@ -26,8 +26,8 @@ export default () => [
     box({
       ico: '02',
       title: t('Innovazione e ricerca', 'Innovation & research'),
-      text: t("Partecipiamo a progetti di ricerca e sviluppo con università e imprese. In SIGENERA, Digiservice è capofila di una rete con l'Università della Calabria, ID Technology e Tecnoinnovis; gli stagisti dell'ITS CADMO saranno coinvolti in formazione on the job nello sviluppo dei moduli software.", 'We take part in research and development projects with universities and companies. In SIGENERA, Digiservice leads a network with the Università della Calabria, ID Technology and Tecnoinnovis; interns from ITS CADMO will receive on-the-job training while developing the software modules.'),
-      body: link('sigenera', t('Il progetto SIGENERA', 'The SIGENERA project'), 'arrow'),
+      text: t("Partecipiamo a progetti di ricerca e sviluppo con università e imprese. In SiGENERA, Digiservice è capofila di una rete con l'Università della Calabria, ID Technology e Tecnoinnovis; gli stagisti dell'ITS CADMO saranno coinvolti in formazione on the job nello sviluppo dei moduli software.", 'We take part in research and development projects with universities and companies. In SiGENERA, Digiservice leads a network with the Università della Calabria, ID Technology and Tecnoinnovis; interns from ITS CADMO will receive on-the-job training while developing the software modules.'),
+      body: link('sigenera', t('Il progetto SiGENERA', 'The SiGENERA project'), 'arrow'),
     }),
     box({
       ico: '03',

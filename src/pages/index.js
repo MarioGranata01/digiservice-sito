@@ -8,6 +8,8 @@ import servizi from './servizi/servizi.js';
 import servizio from './servizi/servizio.js';
 import prodotti from './prodotti/prodotti.js';
 import timesheet from './prodotti/timesheet-connect-cloud.js';
+import scadenzario from './prodotti/scadenzario.js';
+import archiviart from './prodotti/archiviart.js';
 import progetti from './progetti/progetti.js';
 import sigenera from './progetti/sigenera.js';
 import newsEventi from './news/news-eventi.js';
@@ -29,6 +31,8 @@ export const PAGES = {
   ...Object.fromEntries(SERVICE_IDS.map((id) => [id, servizio(id)])),
   prodotti,
   'timesheet-connect-cloud': timesheet,
+  scadenzario,
+  archiviart,
   progetti,
   sigenera,
   'news-eventi': newsEventi,

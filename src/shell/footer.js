@@ -9,7 +9,7 @@ import logo from '../assets/logo.png';
 const COLUMNS = [
   { title: t('Servizi', 'Services'), pages: SERVICE_IDS },
   { title: t('Azienda', 'Company'), pages: ['chi-siamo', 'mission-e-valori', 'formazione-e-innovazione', 'lavora-con-noi'] },
-  { title: t('Prodotti e progetti', 'Products and projects'), pages: ['timesheet-connect-cloud', 'sigenera', 'blog', 'eventi'] },
+  { title: t('Prodotti e progetti', 'Products and projects'), pages: ['timesheet-connect-cloud', 'scadenzario', 'archiviart', 'sigenera', 'blog', 'eventi'] },
 ];
 
 /* Icone dei social (SVG in linea, colore = currentColor). I link ai profili sono da inserire. */

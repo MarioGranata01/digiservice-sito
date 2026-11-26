@@ -1,6 +1,6 @@
 import { hero } from '../../components/hero.js';
 import { section } from '../../components/sections.js';
-import { card, placeholderCard, grid } from '../../components/cards.js';
+import { card, grid } from '../../components/cards.js';
 import { primary } from '../../components/links.js';
 import { pageCta } from '../../blocks/cta.js';
 import { SCENES } from '../../data/scenes.js';
@@ -11,7 +11,7 @@ export default () => [
     crumb: [[t('Prodotti', 'Products')]],
     label: t('Prodotti', 'Products'),
     title: t('I nostri {prodotti} software.', 'Our software {products}.'),
-    lead: t('Oltre alla consulenza e allo sviluppo su misura, Digiservice sviluppa e commercializza software propri. Il primo è TimeSheet Connect Cloud.', 'Alongside consulting and custom development, Digiservice develops and markets its own software. The first is TimeSheet Connect Cloud.'),
+    lead: t('Oltre alla consulenza e allo sviluppo su misura, Digiservice sviluppa e commercializza software propri: TimeSheet Connect Cloud, Scadenzario e Archiviart.', 'Alongside consulting and custom development, Digiservice develops and markets its own software: TimeSheet Connect Cloud, Scadenzario and Archiviart.'),
     actions: [primary('timesheet-connect-cloud', t('Scopri TimeSheet Connect Cloud', 'Discover TimeSheet Connect Cloud'))],
     scene: SCENES.cloud,
   }),
@@ -28,9 +28,22 @@ export default () => [
       ],
       link: { to: 'timesheet-connect-cloud', label: t('Scopri', 'Discover') },
     }),
-    placeholderCard({
-      title: t('Spazio per i prossimi prodotti', 'Space for upcoming products'),
-      text: t('Ogni nuovo prodotto è una scheda dedicata in WordPress: compili i campi e la griglia si aggiorna da sola.', 'Each new product is a dedicated entry in WordPress: fill in the fields and the grid updates automatically.'),
+    card({
+      tag: t('Scadenze', 'Deadlines'),
+      title: 'Scadenzario',
+      text: t('[Descrizione da inserire]', '[Description to be added]'),
+      link: { to: 'scadenzario', label: t('Scopri', 'Discover') },
+    }),
+    card({
+      tag: t('Arte e patrimonio', 'Art & heritage'),
+      title: 'Archiviart',
+      text: t("Il passaporto digitale delle opere d'arte: digitalizza, tutela e organizza il patrimonio artistico e documentale.", 'The digital passport for works of art: digitises, protects and organises artistic and documentary heritage.'),
+      list: [
+        t('Scheda di provenienza verificabile', 'Verifiable provenance record'),
+        t('Archivio privato ricercabile', 'Private, searchable archive'),
+        t('Certificati con chip NFC', 'Certificates with NFC chips'),
+      ],
+      link: { to: 'archiviart', label: t('Scopri', 'Discover') },
     }),
   ])),
   pageCta({ title: t('Cerchi un software su misura?', 'Looking for custom software?'), text: t('Oltre ai prodotti, sviluppiamo applicazioni progettate sui tuoi processi.', 'Beyond our products, we develop applications designed around your processes.'), scene: SCENES.cubesSmall }),

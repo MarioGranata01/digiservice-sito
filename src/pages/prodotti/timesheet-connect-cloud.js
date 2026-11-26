@@ -136,7 +136,7 @@ export default () => [
     body: checklist(SERVICE_TERMS),
     aside: box({
       red: true,
-      body: `<span class="tag">${t("Il prodotto e l'AI", 'The product and AI')}</span><h3>${t('Ricerca in corso', 'Ongoing research')}</h3><p>${t('Nel progetto di ricerca SIGENERA, Digiservice punta a potenziare TimeSheet Connect con agenti digitali basati su AI generativa e Large Language Models. Si tratta di attività di ricerca in corso, non di una funzione già disponibile.', 'Through the SIGENERA research project, Digiservice aims to enhance TimeSheet Connect with digital agents based on generative AI and Large Language Models. This is ongoing research, not a feature that is already available.')}</p>${link('sigenera', t('Leggi il progetto SIGENERA', 'Read about the SIGENERA project'), 'arrow')}`,
+      body: `<span class="tag">${t("Il prodotto e l'AI", 'The product and AI')}</span><h3>${t('Ricerca in corso', 'Ongoing research')}</h3><p>${t('Nel progetto di ricerca SiGENERA, Digiservice punta a potenziare TimeSheet Connect con agenti digitali basati su AI generativa e Large Language Models. Si tratta di attività di ricerca in corso, non di una funzione già disponibile.', 'Through the SiGENERA research project, Digiservice aims to enhance TimeSheet Connect with digital agents based on generative AI and Large Language Models. This is ongoing research, not a feature that is already available.')}</p>${link('sigenera', t('Leggi il progetto SiGENERA', 'Read about the SiGENERA project'), 'arrow')}`,
     }),
   }),
 
