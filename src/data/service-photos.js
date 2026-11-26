@@ -4,12 +4,19 @@ import { t } from '../lib/i18n.js';
  * Foto delle card servizi (blocks/services.js).
  * Basta copiare in src/assets/servizi/ un file chiamato come l'id del servizio
  * (es. cloud-solutions.jpg): viene preso in automatico. Senza foto la card
- * mostra un segnaposto con il soggetto suggerito qui sotto.
+ * mostra l'illustrazione provvisoria di src/assets/servizi/illustrazioni/
+ * (stesso nome, .svg) o, se manca anche quella, un segnaposto con il soggetto suggerito qui sotto.
  */
-const files = import.meta.glob('../assets/servizi/*.{jpg,jpeg,png,webp}', { eager: true, import: 'default' });
+// Le opzioni vanno scritte qui dentro: Vite non legge una variabile
+const photos = import.meta.glob('../assets/servizi/*.{jpg,jpeg,png,webp}', { eager: true, import: 'default' });
+/* ?inline: le illustrazioni entrano nella pagina come testo, così nessuna estensione del browser può bloccarne l'indirizzo */
+const drawings = import.meta.glob('../assets/servizi/illustrazioni/*.svg', { eager: true, import: 'default', query: '?inline' });
 
-export const servicePhoto = (id) =>
+const byId = (files, id) =>
   Object.entries(files).find(([path]) => path.split('/').pop().replace(/\.\w+$/, '') === id)?.[1];
+
+/* La foto vera ha la precedenza sull'illustrazione provvisoria */
+export const servicePhoto = (id) => byId(photos, id) ?? byId(drawings, id);
 
 /* Soggetto consigliato per ogni foto: persone e lavoro reale, niente grafiche astratte */
 export const PHOTO_HINTS = {
