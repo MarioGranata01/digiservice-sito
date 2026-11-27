@@ -18,19 +18,19 @@ export const HOME_SHOWCASE = [
   {
     kind: t('Prodotto', 'Product'),
     name: 'TimeSheet Connect',
-    text: t('Presenze e dipendenti in cloud, da computer, tablet e smartphone.', 'Attendance and staff in the cloud, from computer, tablet and smartphone.'),
+    text: t("La soluzione cloud per la gestione integrata dei dipendenti e dei cantieri. Semplifica presenze, turni, richieste e attività del personale, monitorando badge di cantiere, commesse e risorse in un'unica piattaforma.", 'The cloud solution for integrated management of staff and construction sites. It simplifies attendance, shifts, requests and staff activities, while tracking site badges, contracts and resources in a single platform.'),
     to: 'timesheet-connect-cloud',
-  },
-  {
-    kind: t('Prodotto', 'Product'),
-    name: 'Scadenzario',
-    text: t('[Descrizione da inserire]', '[Description to be added]'),
-    to: 'scadenzario',
   },
   {
     kind: t('Prodotto', 'Product'),
     name: 'Archiviart',
     text: t("Il passaporto digitale delle opere d'arte: archivio, provenienza e certificati verificabili.", 'The digital passport for works of art: archive, provenance and verifiable certificates.'),
     to: 'archiviart',
+  },
+  {
+    kind: t('Prodotto', 'Product'),
+    name: 'Scadenzario',
+    text: t('Gestisci e monitora facilmente scadenze, progetti e attività. Organizza i tuoi impegni, ricevi notifiche sulle scadenze imminenti e tieni tutto sotto controllo con una visualizzazione semplice e intuitiva.', 'Easily manage and monitor deadlines, projects and tasks. Organise your commitments, get notified of upcoming deadlines and keep everything under control with a simple, intuitive view.'),
+    to: 'scadenzario',
   },
 ];
