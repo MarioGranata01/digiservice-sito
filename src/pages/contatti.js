@@ -4,7 +4,7 @@ import { todo } from '../components/text.js';
 import { infoList } from '../components/lists.js';
 import { form, sceneFrame, FIELDS } from '../components/forms.js';
 import { SCENES } from '../data/scenes.js';
-import { COMPANY, addressHtml } from '../data/company.js';
+import { COMPANY, addressHtml, legalIds } from '../data/company.js';
 import { t } from '../lib/i18n.js';
 
 const REQUEST_TYPES = [
@@ -24,12 +24,12 @@ export default () => [
     scene: SCENES.cloud,
   }),
   section({ tight: true, inner: 'ct' }, `<div class="tx"><p class="lab">${t('Riferimenti', 'Contact details')}</p>${infoList([
-    [t('Società', 'Company'), `${COMPANY.legalName}<br>${todo('[P. IVA, capitale sociale, REA]')}`],
+    [t('Società', 'Company'), `${COMPANY.legalName}<br>${legalIds()}`],
     [t('Sede', 'Office'), addressHtml()],
     ['Email', COMPANY.email],
     [t('Sito web', 'Website'), COMPANY.website],
     [t('Telefono', 'Phone'), todo('[DA VERIFICARE]')],
-    ['Social', `${COMPANY.social.join(' · ')}<br>${COMPANY.socialHandle}`],
+    ['Social', `${COMPANY.social.map((n) => `<a href="${COMPANY.socialUrls[n]}" target="_blank" rel="noopener">${n}</a>`).join(' · ')}<br>${COMPANY.socialHandle}`],
   ])}</div>`
   + sceneFrame(SCENES.cloudWide, form({
     id: 'contatti',

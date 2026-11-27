@@ -3,17 +3,27 @@ import { t } from '../lib/i18n.js';
 export const COMPANY = {
   name: 'Digiservice',
   legalName: 'Digiservice S.r.l.',
+  vat: 'IT03797390782',
+  rea: 'CS - 257686',
   tagline: t('Soluzioni ICT innovative per il tuo business.', 'Innovative ICT solutions for your business.'),
   city: 'Rende (CS)',
   address: ['Via Finlandia, 5', 'Contrada Cutura', '87036 Rende (CS)'],
   email: 'info@digiservice-solutions.it',
   website: 'www.digiservice-solutions.it',
   social: ['LinkedIn', 'Facebook', 'Instagram'],
+  socialUrls: {
+    LinkedIn: 'https://www.linkedin.com/company/digiserviceitalia/',
+    Facebook: 'https://www.facebook.com/digiserviceitalia/',
+    Instagram: 'https://www.instagram.com/digiservice.italia/',
+  },
   socialHandle: '@digiserviceitalia',
 };
 
 /** Indirizzo su più righe. */
 export const addressHtml = () => COMPANY.address.join('<br>');
+
+/** Dati fiscali su una riga: «P. IVA … · REA …». */
+export const legalIds = () => `${t('P. IVA', 'VAT No.')} ${COMPANY.vat} · REA ${COMPANY.rea}`;
 
 /* Siti esterni citati in più pagine */
 export const EXTERNAL = {

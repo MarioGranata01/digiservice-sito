@@ -27,7 +27,7 @@ export default () => [
     crumb: [[t('Prodotti', 'Products'), 'prodotti'], ['Scadenzario']],
     label: t('Prodotto Digiservice', 'A Digiservice product'),
     title: t('Scadenzario: {[titolo da inserire]}', 'Scadenzario: {[title to be added]}'),
-    lead: t('[Descrizione del prodotto da inserire: a cosa serve e per chi, in una o due righe.]', '[Product description to be added: what it does and who it is for, in one or two lines.]'),
+    lead: t('Gestisci e monitora facilmente scadenze, progetti e attività. Organizza i tuoi impegni, ricevi notifiche sulle scadenze imminenti e tieni tutto sotto controllo con una visualizzazione semplice e intuitiva.', 'Easily manage and monitor deadlines, projects and tasks. Organise your commitments, get notified of upcoming deadlines and keep everything under control with a simple, intuitive view.'),
     actions: [outline('contatti', t('Richiedi una demo', 'Request a demo'))],
     visual: listMockup(),
   }),
